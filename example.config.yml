@@ -15,6 +15,7 @@ jobs:
       - mysqldump -u ${MYSQL_USER} -p${MYSQL_PASSWORD} -h ${MYSQL_HOST} nextcloud > out.sql
       - tar -czf nextcloud.tar.gz out.sql
     filepath_to_upload: ${TEMP_DIR}/nextcloud.tar.gz
+    # you would get a file like that : 2024_01_21_21_09_11_06-nextcloud-backup-o0bsp0u4.gz in s3
 
   - name: ghost-backup
     schedule: "0 12 * * *"
